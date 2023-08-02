@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26D3B5A7-A8E3-4800-A3B2-6FE316CC23BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Primal</RootNamespace>
+    <AssemblyName>Primal</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Styxtwo-Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Styxtwo-Utilities.1.0.0.8\lib\Styxtwo-Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\TGame\packages\NUnit.3.4.1\lib\net40\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Vector2D">
+      <HintPath>..\..\TGame\packages\Vector-2D.1.1.0.88\lib\Vector2D.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main\AbstractSystem.cs" />
+    <Compile Include="Main\DebugInfo.cs" />
+    <Compile Include="Main\Entities.cs" />
+    <Compile Include="Main\Entity.cs" />
+    <Compile Include="Main\EntityFinder.cs" />
+    <Compile Include="Main\SystemWrapper.cs" />
+    <Compile Include="Main\Systems.cs" />
+    <Compile Include="Main\World.cs" />
+    <Compile Include="Main\API\DrawSystem.cs" />
+    <Compile Include="Main\API\IComponent.cs" />
+    <Compile Include="Main\API\IDebugInfo.cs" />
+    <Compile Include="Main\API\IEntity.cs" />
+    <Compile Include="Main\API\IFinder.cs" />
+    <Compile Include="Main\API\IPrimalWorld.cs" />
+    <Compile Include="Main\API\UpdateSystem.cs" />
+    <Compile Include="Main\API\WorldFactory.cs" />
+    <Compile Include="Main\EventBus.cs" />
+    <Compile Include="Main\API\Events\EntityEvent.cs" />
+    <Compile Include="Main\API\Events\IEntityEvent.cs" />
+    <Compile Include="Main\API\Events\IEventBus.cs" />
+    <Compile Include="Main\API\Events\IEventHandler.cs" />
+    <Compile Include="Main\API\Events\EntityEventTypes.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
