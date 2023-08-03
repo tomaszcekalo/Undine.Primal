@@ -19,7 +19,10 @@ namespace Undine.Primal
 
         public override void AddSystem<A>(UnifiedSystem<A> system)
         {
-            throw new NotImplementedException();
+            World.AddSystem(new PrimalSystem<A>()
+            {
+                System = system
+            });
         }
 
         public override void AddSystem<A, B>(UnifiedSystem<A, B> system)
@@ -32,12 +35,18 @@ namespace Undine.Primal
 
         public override void AddSystem<A, B, C>(UnifiedSystem<A, B, C> system)
         {
-            throw new NotImplementedException();
+            World.AddSystem(new PrimalSystem<A, B, C>()
+            {
+                System = system
+            });
         }
 
         public override void AddSystem<A, B, C, D>(UnifiedSystem<A, B, C, D> system)
         {
-            throw new NotImplementedException();
+            World.AddSystem(new PrimalSystem<A, B, C, D>()
+            {
+                System = system
+            });
         }
 
         public override IUnifiedEntity CreateNewEntity()
