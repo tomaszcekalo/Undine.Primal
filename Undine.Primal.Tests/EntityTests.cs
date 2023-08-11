@@ -1,4 +1,4 @@
-﻿using Moq;
+﻿using NSubstitute;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +30,8 @@ namespace Undine.Primal.Tests
         public void ComponentCanBeRetrieved()
         {
             var container = new PrimalContainer();
-            var mock = new Mock<UnifiedSystem<AComponent>>();
-            container.AddSystem(mock.Object);
+            var mock = Substitute.For<UnifiedSystem<AComponent>>();
+            container.AddSystem(mock);
             container.Init();
             var entity = (PrimalEntity)container.CreateNewEntity();
             entity.AddComponent(new AComponent());

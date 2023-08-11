@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Moq;
+using NSubstitute;
 using Undine.Core;
 using Undine.Primal;
 using Undine.Primal.Tests.Components;
@@ -30,64 +30,64 @@ namespace Undine.Primal.Tests
         public void OneTypeSystemCanBeAdded()
         {
             var container = new PrimalContainer();
-            var mock = new Mock<UnifiedSystem<AComponent>>();
-            container.AddSystem(mock.Object);
+            var mock = Substitute.For<UnifiedSystem<AComponent>>();
+            container.AddSystem(mock);
         }
 
         [TestMethod]
         public void TwoTypeSystemCanBeAdded()
         {
-            var mock = new Mock<UnifiedSystem<AComponent, BComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent, BComponent>>();
             var container = new PrimalContainer();
-            container.AddSystem(mock.Object);
+            container.AddSystem(mock);
         }
 
         [TestMethod]
         public void ThreeTypeSystemCanBeAdded()
         {
-            var mock = new Mock<UnifiedSystem<AComponent, BComponent, CComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent, BComponent, CComponent>>();
             var container = new PrimalContainer();
-            container.AddSystem(mock.Object);
+            container.AddSystem(mock);
         }
 
         [TestMethod]
         public void FourTypeSystemCanBeAdded()
         {
-            var mock = new Mock<UnifiedSystem<AComponent, BComponent, CComponent, DComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent, BComponent, CComponent, DComponent>>();
             var container = new PrimalContainer();
-            container.AddSystem(mock.Object);
+            container.AddSystem(mock);
         }
 
         [TestMethod]
         public void OneTypeSystemCanBeRetrieved()
         {
-            var mock = new Mock<UnifiedSystem<AComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent>>();
             var container = new PrimalContainer();
-            container.GetSystem(mock.Object);
+            container.GetSystem(mock);
         }
 
         [TestMethod]
         public void TwoTypeSystemCanBeRetrieved()
         {
-            var mock = new Mock<UnifiedSystem<AComponent, BComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent, BComponent>>();
             var container = new PrimalContainer();
-            container.GetSystem(mock.Object);
+            container.GetSystem(mock);
         }
 
         [TestMethod]
         public void ThreeTypeSystemCanBeRetrieved()
         {
-            var mock = new Mock<UnifiedSystem<AComponent, BComponent, CComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent, BComponent, CComponent>>();
             var container = new PrimalContainer();
-            container.GetSystem(mock.Object);
+            container.GetSystem(mock);
         }
 
         [TestMethod]
         public void FourTypeSystemCanBeRetrieved()
         {
-            var mock = new Mock<UnifiedSystem<AComponent, BComponent, CComponent, DComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent, BComponent, CComponent, DComponent>>();
             var container = new PrimalContainer();
-            container.GetSystem(mock.Object);
+            container.GetSystem(mock);
         }
     }
 }
