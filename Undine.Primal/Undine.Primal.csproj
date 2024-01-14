@@ -1,14 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <PackageProjectUrl>https://github.com/tomaszcekalo/Undine.Primal</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/tomaszcekalo/Undine.Primal</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <Description>undine bindings for Primal ECS </Description>
+	  <Version>1.0.1</Version>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Primal" Version="1.3.0.15" />
-    <PackageReference Include="Undine.Core" Version="0.0.0.6" />
+    <PackageReference Include="Undine.Core" Version="0.0.0.8" />
   </ItemGroup>
 
   <ItemGroup>
